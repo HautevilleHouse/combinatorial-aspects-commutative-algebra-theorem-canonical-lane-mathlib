@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.CombinatorialAspectsCommutativeAlgebraTheoremCanonicalLaneLean.MonomialIdeals
+import HautevilleHouse.CombinatorialAspectsCommutativeAlgebraTheoremCanonicalLaneLean.StanleyReisner
+import HautevilleHouse.CombinatorialAspectsCommutativeAlgebraTheoremCanonicalLaneLean.InitialIdeals
+import HautevilleHouse.CombinatorialAspectsCommutativeAlgebraTheoremCanonicalLaneLean.HilbertFunctions
+import HautevilleHouse.CombinatorialAspectsCommutativeAlgebraTheoremCanonicalLaneLean.AlexanderDuality
+
+namespace HautevilleHouse
+namespace CombinatorialAspectsCommutativeAlgebraTheoremCanonicalLaneLean
+
+def ConstrainedCombinatorialAlgebraClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_combinatorial_algebra_endgame (A : AdmissibleClass) : ConstrainedCombinatorialAlgebraClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CombinatorialAspectsCommutativeAlgebraTheoremCanonicalLaneLean
+end HautevilleHouse
